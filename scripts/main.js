@@ -2,8 +2,10 @@ let $ = window.jQuery;
 let time = 0,
     j = 0,
     i = 0,
+    k = 0,
     ms = $('#ms'),
     sec = $('#seconds'),
+    min = $('#minutes'),
     ppBtn = $('.ppBtn'),
     playBtn = '<button id="playBtn" class="btn playBtn"><img src="images/music-player-play.png" alt="playBtn"></button>',
     pauseBtn = '<button id="playBtn" class="btn pauseBtn"><img src="images/pause-symbol.svg" alt="pauseBtn"></button>';
@@ -16,10 +18,16 @@ $('#playBtn').click(function () {
         time = setInterval(function () {
             i++;
             ms.text(i.toString());
-            if (i == 100) {
+            if (i == 99) {
                 j++;
                 sec.text(j.toString());
                 i = 0;
+            }
+            if (j==56) {
+                k++;
+                min.text(k.toString());
+                i=0;
+                j=0;
             }
         }, 10);
 
@@ -43,4 +51,5 @@ $('#resetBtn').on('click', function () {
     sec.html('<b>00</b>');
     i=0;
     j=0;
+    k=0;
 })
