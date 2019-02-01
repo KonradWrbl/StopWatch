@@ -1,35 +1,36 @@
 let $ = window.jQuery;
-let time = 0;
-let j = 0;
-let i = 0;
-let ms = $('#ms');
-let sec = $('#seconds')
+let time = 0,
+    j = 0,
+    i = 0,
+    ms = $('#ms'),
+    sec = $('#seconds'),
+    ppBtn = $('.ppBtn'),
+    playBtn = '<button id="playBtn" class="btn playBtn"><img src="images/music-player-play.png" alt="playBtn"></button>',
+    pauseBtn = '<button id="playBtn" class="btn pauseBtn"><img src="images/pause-symbol.svg" alt="pauseBtn"></button>';
 
-$(".playBtn").on('click', function(){
-    time = setInterval(function() {
-        i++;
-        ms.text(i.toString());
-        if (i==100) {
-            j++;
-            sec.text(j.toString());
-            i = 0;
-        }
-    }, 10);
-    $(this).html('<img src="images/pause-symbol.svg" alt="pauseBtn"></img>');
-    $(this).removeClass('playBtn');
-    $(this).addClass('stopBtn');
-});
-
-$(".stopBtn").on('click', function(){
-    clearInterval(time);
-    $(".playBtn").html('<img src="images/music-player-play.png" alt="pauseBtn"></img>');
-    $(".playBtn").removeClass('stopBtn');
-    $(".playBtn").addClass('playBtn');
+$('#playBtn').click(function() {
+    if($(this).hasClass('.playBtn')) {
+        ppBtn.replaceWith(pauseBtn);
+        time = setInterval(function() {
+            i++;
+            ms.text(i.toString());
+            if (i==100) {
+                j++;
+                sec.text(j.toString());
+                i = 0;
+            }
+        }, 10);
+    } else  {
+        clearInterval(time);
+        ppBtn.replaceWith(playBtn);
+    }
 });
 
 $('#resetBtn').on('click', function () {
+    ppBtn.replaceWith(playBtn);
     ms.html('<b>00</b>');
     sec.html('<b>00</b>');
     clearInterval(time);
-    $(".pauseBtn").html('<img src="images/music-player-play.png" alt="playBtn"></img>');
+    i=0;
+    j=0;
 })
