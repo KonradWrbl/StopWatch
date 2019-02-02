@@ -20,12 +20,12 @@ $('#playBtn').click(function () {
             ms.text(i.toString());
             if (i == 99) {
                 j++;
-                sec.text(j.toString());
+                sec.text(j.toString()+',');
                 i = 0;
             }
             if (j==56) {
                 k++;
-                min.text(k.toString());
+                min.text(k.toString()+':');
                 i=0;
                 j=0;
             }
@@ -48,7 +48,8 @@ $('#resetBtn').on('click', function () {
     $('#playBtn').toggleClass("playBtn");
     $('#playBtn').toggleClass('pauseBtn');
     ms.html('<b>00</b>');
-    sec.html('<b>00</b>');
+    sec.html('<b>00,</b>');
+    min.html('<b>00:</b>')
     i=0;
     j=0;
     k=0;

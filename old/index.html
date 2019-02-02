@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stoper</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="bg">
+        <img src="images/background.jpg" alt="background"> 
+    </div>
+    <div class="viewer-body">
+        <table>
+            <tr>
+                <td rowspan="2" class="viewer" id="minutes"><b>00</b></td>
+                <td rowspan="2" class = "viewer">:</td>
+                <td rowspan="2" class="viewer" id="seconds"><b>00</b></td>
+                <td rowspan="2" class = "viewer">,</td>
+                <td rowspan="2" class="viewer" id='ms'><b>00</b></td>
+                <td class='ppBtn'><button id="playBtn" class="btn playBtn"><img src="images/music-player-play.png" alt="playBtn"></button></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id='resetBtn' class="btn"><img src="images/rounded-black-square-shape.svg" alt="stopBtn"></button>
+                </td>
+            </tr>
+        </table>        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
