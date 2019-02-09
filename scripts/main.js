@@ -1,4 +1,4 @@
-let $ = window.jQuery;
+const $ = window.jQuery;
 let time = 0,
     j = 0,
     i = 0,
@@ -9,7 +9,6 @@ let time = 0,
     ppBtn = $('.ppBtn'),
     playBtn = '<button id="playBtn" class="btn playBtn"><img src="images/music-player-play.png" alt="playBtn"></button>',
     pauseBtn = '<button id="playBtn" class="btn pauseBtn"><img src="images/pause-symbol.svg" alt="pauseBtn"></button>';
-
 
 $('#playBtn').click(function () {
     if ($(this).hasClass('playBtn')) {
